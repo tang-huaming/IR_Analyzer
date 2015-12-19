@@ -14,9 +14,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    basicsettingsdlg.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    basicsettingsdlg.h
 
 DISTFILES += \
     ChangeLog.txt

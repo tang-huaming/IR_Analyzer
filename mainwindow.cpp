@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "basicsettingsdlg.h"
 #include <QCloseEvent>
 #include <QAction>
 #include <QIcon>
@@ -116,7 +117,7 @@ void MainWindow::createMenus()
 void MainWindow::createToolBars()
 {
     commToolBar = addToolBar(tr("common"));
-    commToolBar->setIconSize(QSize(64,64));
+    commToolBar->setIconSize(QSize(32,32));
     commToolBar->addAction(exitAct);
     commToolBar->addAction(basicSettingAct);
 }
@@ -132,7 +133,13 @@ void MainWindow::exitApp()
 }
 
 void MainWindow::showBasicSetting()
-{}
+{
+    BasicSettingsDlg bDlg;
+    bDlg.setWindowFlags(Qt::WindowStaysOnTopHint);
+    bDlg.setModal(true);//设置模态对话框
+    bDlg.resize(QSize(640,480));
+    bDlg.exec();
+}
 
 void MainWindow::showAbout()
 {
